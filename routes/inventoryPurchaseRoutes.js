@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/inventory-purchase', authenticateJWT, authorizeRole(true), inventoryPurchaseController.createInventoryPurchase);
 router.get('/inventory-purchase', authenticateJWT, authorizeRole(true), inventoryPurchaseController.getAllInventoryPurchases);
-router.get('/inventory-purchase/:purchaseId', inventoryPurchaseController.getInventoryPurchaseById);
+router.get('/inventory-purchase/:purchaseId', authenticateJWT, authorizeRole(true), inventoryPurchaseController.getInventoryPurchaseById);
 
 
 module.exports = router;

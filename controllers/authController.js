@@ -4,21 +4,21 @@ const User = require('../models/User');
 require('dotenv').config();
 
 // Register a user
-const register = async (req, res) => {
-    try {
-        const { name, email, password } = req.body;
+// const register = async (req, res) => {
+//     try {
+//         const { name, email, password } = req.body;
 
-        // Check if email already exists
-        const existingUser = await User.findOne({ where: { email } });
-        if (existingUser) return res.status(400).json({ error: 'Email already exists' });
+//         // Check if email already exists
+//         const existingUser = await User.findOne({ where: { email } });
+//         if (existingUser) return res.status(400).json({ error: 'Email already exists' });
 
-        // Create user
-        const user = await User.create({ name, email, password, isAdmin: false });
-        res.status(201).json({ user: { name: user.name, email: user.email } });
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
-};
+//         // Create user
+//         const user = await User.create({ name, email, password, isAdmin: false });
+//         res.status(201).json({ user: { name: user.name, email: user.email } });
+//     } catch (err) {
+//         res.status(500).json({ error: err.message });
+//     }
+// };
 
 // Login user
 const login = async (req, res) => {
@@ -83,7 +83,6 @@ const fetchUser = async (req, res) => {
 };
 
 module.exports = {
-    register,
     login,
     fetchUser
 }
