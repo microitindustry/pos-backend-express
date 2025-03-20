@@ -129,12 +129,13 @@ const getWeeklySales = async (req, res) => {
                 },
                 {
                     model: OrderItems,
-                    attributes: ['quantity', 'priceAtTime'],
+                    attributes: [
+                        [fn('TO_CHAR', col('OrderItems.createdAt'), 'YYYY-MM-DD HH24:MI:SS'), 'date'], // Include time
+                        'quantity', 'priceAtTime'],
                     include: [
                         {
                             model: Product,
                             attributes: [
-                                [fn('TO_CHAR', col('OrderItems.createdAt'), 'YYYY-MM-DD HH24:MI:SS'), 'date'], // Include time
                                 'productName', 'price', 'imageUrl',]
                         }
                     ]
@@ -220,7 +221,7 @@ const getMonthlySales = async (req, res) => {
             ],
             where: {
                 createdAt: {
-                    [Op.gte]: literal("CURRENT_DATE - INTERVAL '1 month'")
+                    [Op.gte]: literal("CURRENT_DATE - INTERVAL '6 month'")
                 }
             },
             include: [
@@ -231,11 +232,14 @@ const getMonthlySales = async (req, res) => {
                 },
                 {
                     model: OrderItems,
-                    attributes: ['quantity', 'priceAtTime'],
+                    attributes: [
+                        [fn('TO_CHAR', col('OrderItems.createdAt'), 'YYYY-MM-DD HH24:MI:SS'), 'date'],
+                        'quantity', 'priceAtTime'],
                     include: [
                         {
                             model: Product,
-                            attributes: ['productName', 'price', 'imageUrl']
+                            attributes: [
+                                'productName', 'price', 'imageUrl']
                         }
                     ]
                 }
