@@ -49,7 +49,7 @@ app.get("/", (req, res) => {
     res.send("Welcome to POS");
   });
 
-app.use('/uploads', express.static('uploads'));
+// app.use('/uploads', express.static('uploads'));
 app.use('/api', authRoutes);
 app.use('/api', productRoutes);
 app.use('/api', orderRoutes);
