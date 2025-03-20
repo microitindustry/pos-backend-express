@@ -133,7 +133,9 @@ const getWeeklySales = async (req, res) => {
                     include: [
                         {
                             model: Product,
-                            attributes: ['productName', 'price', 'imageUrl']
+                            attributes: [
+                                [fn('TO_CHAR', col('OrderItems.createdAt'), 'YYYY-MM-DD HH24:MI:SS'), 'date'], // Include time
+                                'productName', 'price', 'imageUrl',]
                         }
                     ]
                 }
