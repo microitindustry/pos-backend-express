@@ -49,7 +49,7 @@ const generateDailySalesPdf = (data) => {
         content: [
             { text: 'Report Date: ' + new Date().toLocaleDateString(), style: 'dateStyle', alignment: 'right' },
             { text: 'Daily Sales Report', style: 'header', alignment: 'center' },
-            { text: `Total Sales: $${data.totalSales.toFixed(2)}`, style: 'subheader' },
+            { text: `Total Sales: Rs.${data.totalSales.toFixed(2)}`, style: 'subheader' },
             { text: `Total Orders: ${data.totalOrders}`, style: 'subheader' },
             { text: 'Daily Sales Details:', style: 'subheader' },
             {
@@ -77,8 +77,8 @@ const generateDailySalesPdf = (data) => {
                                 { text: sale.customerPhone || 'N/A', alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                                 { text: item.Product.productName, alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                                 { text: item.quantity, alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
-                                { text: `$${item.priceAtTime.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
-                                { text: `$${totalSales.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
+                                { text: `Rs.${item.priceAtTime.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
+                                { text: `Rs.${totalSales.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                             ]);
                         })
                     ]
@@ -99,7 +99,7 @@ const generateDailySalesPdf = (data) => {
                             return [
                                 { text: sold.productName, alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                                 { text: sold.totalQuantitySold, alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
-                                { text: `$${sold.totalSalesAmount.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
+                                { text: `Rs.${sold.totalSalesAmount.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                             ];
                         })
                     ]
@@ -119,7 +119,7 @@ const generateWeeklySalesPdf = (data) => {
         content: [
             { text: 'Report Date: ' + new Date().toLocaleDateString(), style: 'dateStyle', alignment: 'right' },
             { text: 'Weekly Sales Report', style: 'header', alignment: 'center' },
-            { text: `Total Sales: $${data.totalSales.toFixed(2)}`, style: 'subheader' },
+            { text: `Total Sales: Rs.${data.totalSales.toFixed(2)}`, style: 'subheader' },
             { text: `Total Orders: ${data.totalOrders}`, style: 'subheader' },
             { text: 'Weekly Sales Details:', style: 'subheader' },
             {
@@ -152,8 +152,8 @@ const generateWeeklySalesPdf = (data) => {
                                 { text: sale.customerPhone || 'N/A', alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                                 { text: item.Product.productName, alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                                 { text: item.quantity, alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
-                                { text: `$${item.priceAtTime.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
-                                { text: `$${totalSales.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
+                                { text: `Rs.${item.priceAtTime.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
+                                { text: `Rs.${totalSales.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                             ]);
                         })
                     ]
@@ -174,7 +174,7 @@ const generateWeeklySalesPdf = (data) => {
                             return [
                                 { text: sold.productName, alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                                 { text: sold.totalQuantitySold, alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
-                                { text: `$${sold.totalSalesAmount.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
+                                { text: `Rs.${sold.totalSalesAmount.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                             ];
                         })
                     ]
@@ -194,7 +194,7 @@ const generateMonthlySalesPdf = (data) => {
         content: [
             { text: 'Report Date: ' + new Date().toLocaleDateString(), style: 'dateStyle', alignment: 'right' },
             { text: 'Monthly Sales Report', style: 'header', alignment: 'center' },
-            { text: `Total Sales: $${data.totalSales.toFixed(2)}`, style: 'subheader' },
+            { text: `Total Sales: Rs.${data.totalSales.toFixed(2)}`, style: 'subheader' },
             { text: `Total Orders: ${data.totalOrders}`, style: 'subheader' },
             { text: 'Monthly Sales Details:', style: 'subheader' },
             {
@@ -227,8 +227,8 @@ const generateMonthlySalesPdf = (data) => {
                                 { text: sale.customerPhone || 'N/A', alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                                 { text: item.Product.productName, alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                                 { text: item.quantity, alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
-                                { text: `$${item.priceAtTime.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
-                                { text: `$${totalSales.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
+                                { text: `Rs.${item.priceAtTime.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
+                                { text: `Rs.${totalSales.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                             ]);
                         })
                     ]
@@ -249,7 +249,7 @@ const generateMonthlySalesPdf = (data) => {
                             return [
                                 { text: sold.productName, alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                                 { text: sold.totalQuantitySold, alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
-                                { text: `$${sold.totalSalesAmount.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
+                                { text: `Rs.${sold.totalSalesAmount.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                             ];
                         })
                     ]
@@ -270,7 +270,7 @@ const generateCustomPdf = (data) => {
             { text: 'Report Date: ' + new Date().toLocaleDateString(), style: 'dateStyle', alignment: 'right' },
             { text: 'Custom Sales Report', style: 'header', alignment: 'center' },
             { text: `From ${data.startDate.toDateString()} to ${data.endDate.toDateString()}`, style: 'subheader' },
-            { text: `Total Sales: $${data.totalSales.toFixed(2)}`, style: 'subheader' },
+            { text: `Total Sales: Rs.${data.totalSales.toFixed(2)}`, style: 'subheader' },
             { text: `Total Orders: ${data.totalOrders}`, style: 'subheader' },
             { text: 'Sales and Order Details:', style: 'subheader' },
             {
@@ -298,8 +298,8 @@ const generateCustomPdf = (data) => {
                                 { text: sale.customerPhone || 'N/A', alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                                 { text: item.Product.productName, alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                                 { text: item.quantity, alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
-                                { text: `$${item.priceAtTime.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
-                                { text: `$${totalSales.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null }
+                                { text: `Rs.${item.priceAtTime.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
+                                { text: `Rs.${totalSales.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null }
                             ]);
                         })
                     ]
@@ -323,7 +323,7 @@ const generateCustomPdf = (data) => {
                             return [
                                 { text: sold.productName, alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                                 { text: sold.totalQuantitySold, alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
-                                { text: `$${sold.totalSalesAmount.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
+                                { text: `Rs.${sold.totalSalesAmount.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                             ];
                         })
                     ]
@@ -617,13 +617,13 @@ const generateInventoryPurchasePdf = (purchase) => {
                             { text: item.Product.productName, alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                             { text: item.Product.productDescription, alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
                             { text: item.quantity, alignment: 'center', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
-                            { text: `$${item.Product.price.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
-                            { text: `$${(item.quantity * item.Product.price).toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null }
+                            { text: `Rs.${item.Product.price.toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null },
+                            { text: `Rs.${(item.quantity * item.Product.price).toFixed(2)}`, alignment: 'right', fillColor: index % 2 === 0 ? '#f9f9f9' : null }
                         ])
                     ]
                 }
             },
-            { text: `Total Purchase Amount: $${purchase.PurchaseOrderItems.reduce((total, item) => total + (item.quantity * item.Product.price), 0).toFixed(2)}`, style: 'subheader' }
+            { text: `Total Purchase Amount: Rs.${purchase.PurchaseOrderItems.reduce((total, item) => total + (item.quantity * item.Product.price), 0).toFixed(2)}`, style: 'subheader' }
         ],
         footer: function (currentPage, pageCount) {
             return {
